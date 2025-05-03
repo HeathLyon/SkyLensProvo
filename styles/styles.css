@@ -110,3 +110,70 @@ body {
       border-top: 1px solid #444;
     }
   }
+
+/* Portfolio Grid */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto adjusts grid items */
+    gap: 1rem;
+    padding: 2rem;
+  }
+  
+  .portfolio-item {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .portfolio-item:hover {
+    transform: scale(1.03);
+  }
+  
+  .portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .portfolio-item p {
+    padding: 0.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* For Mobile - One column layout */
+  @media (max-width: 768px) {
+    .portfolio-grid {
+      grid-template-columns: 1fr; /* 1 column for small screens */
+      gap: 1rem;
+    }
+  }
+  
+  /* For Tablet / Desktop - 2 or 3 columns */
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens (tablets) */
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens (desktops) */
+    }
+  }
+  .portfolio-item {
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Optional: shows pointer when touching */
+  }
+  
+  .portfolio-item:active {
+    transform: scale(1.03); /* Emulate hover on tap */
+  }

@@ -1,35 +1,43 @@
+:root {
+  --primary-color: #2c3e50;
+  --accent-color: #FF4E4E;
+  --text-color: #333;
+}
+
 /* General Layout */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     background: #f8f9fa;
-    color: #333;
+    color: var(--primary-color);
   }
-  
+  h1, h2, .logo {
+    font-family: 'Open Sans', sans-serif;
+  }  
   /* Header and Navigation */
   header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #8B0000, #FFD700);
+
     color: white;
     padding: 1rem 0;
   }
-  
   .nav-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
-  .logo {
-    margin: 0;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+  .logo-img {
+    height: .5rem;
+    width: .5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #fff;
   }
-  
   nav {
     width: 100%;
   }
-  
   .menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -39,7 +47,6 @@ body {
     cursor: pointer;
     margin-bottom: 0.5rem;
   }
-  
   /* Nav Links Styling */
   .nav-links {
     list-style: none;
@@ -49,7 +56,6 @@ body {
     margin: 0;
     padding: 0;
   }
-  
   .nav-links a {
     color: white;
     text-decoration: none;
@@ -58,59 +64,63 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s;
   }
-  
   .nav-links a:hover {
-    background-color: #1abc9c;
+    background-color: var(--accent-color);
   }
-  
   /* Main and Footer */
   main {
     padding: 2rem 1rem;
     text-align: center;
   }
-  
   footer {
-    background-color: #2c3e50;
+    background-color: var(--accent-color);
     color: white;
     padding: 1rem;
     text-align: center;
     font-size: 0.9rem;
   }
-  
   .footer-content .socials a {
-    color: #1abc9c;
+    color: var(--accent-color);
     text-decoration: none;
     margin: 0 0.3rem;
     transition: color 0.3s;
   }
-  
   .footer-content .socials a:hover {
     color: #ffffff;
   }
-  
   /* Responsive Design */
   @media (max-width: 768px) {
     .menu-toggle {
       display: block;
     }
-  
     .nav-links {
       display: none;
       flex-direction: column;
       background-color: #2c3e50;
       width: 100%;
     }
-  
     .nav-links.active {
       display: flex;
     }
-  
     .nav-links li {
       padding: 1rem 0;
       border-top: 1px solid #444;
     }
   }
-
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-img {
+    height: 50px;
+    width: auto;
+  }
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+  }
 /* Portfolio Grid */
 .portfolio-grid {
     display: grid;
@@ -118,32 +128,27 @@ body {
     gap: 1rem;
     padding: 2rem;
   }
-  
   .portfolio-item {
     background-color: #f4f4f4;
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px #FF4E4E(0, 0, 0, 0.1);
   }
-  
   .portfolio-item:hover {
     transform: scale(1.03);
   }
-  
   .portfolio-item img {
     width: 100%;
     height: auto;
     display: block;
   }
-  
   .portfolio-item p {
     padding: 0.5rem;
     font-weight: bold;
     color: #333;
   }
-  
   /* For Mobile - One column layout */
   @media (max-width: 768px) {
     .portfolio-grid {
@@ -151,14 +156,13 @@ body {
       gap: 1rem;
     }
   }
-  
   /* For Tablet / Desktop - 2 or 3 columns */
   @media (min-width: 769px) and (max-width: 1200px) {
     .portfolio-grid {
       grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens (tablets) */
     }
   }
-  
+
   @media (min-width: 1201px) {
     .portfolio-grid {
       grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens (desktops) */
@@ -169,11 +173,11 @@ body {
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 6px #FF4E4E(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     cursor: pointer; /* Optional: shows pointer when touching */
   }
-  
+
   .portfolio-item:active {
     transform: scale(1.03); /* Emulate hover on tap */
   }

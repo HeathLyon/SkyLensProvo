@@ -251,6 +251,13 @@ body {
 .contact-form button {
   align-self: center;
 }
+.call-btn {
+  background-color: #28a745; /* green */
+}
+
+.text-btn {
+  background-color: #007bff; /* blue */
+}
   /* Responsive Design */
   @media (max-width: 768px) {
     .menu-toggle {

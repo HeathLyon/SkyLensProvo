@@ -12,3 +12,14 @@ if (lastUpdated) {
   const updated = new Date(document.lastModified);
   lastUpdated.textContent = `Last updated: ${updated.toLocaleDateString()} ${updated.toLocaleTimeString()}`;
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const today = new Date();
+  const endOfAugust = new Date(today.getFullYear(), 7, 31); // Month is 0-indexed: 7 = August
+  const timeDiff = endOfAugust - today;
+  const daysLeft = Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24)));
+
+  const daysLeftEl = document.getElementById("days-left");
+  if (daysLeftEl) {
+    daysLeftEl.textContent = daysLeft;
+  }
+});

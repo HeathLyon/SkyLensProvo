@@ -9,7 +9,10 @@
 <body>
   <header>
     <div class="nav-container">
-      <h1 class="logo">SkyLensProvo</h1>
+      <div class="logo-container">
+        <img src="images/Logo.png" alt="SkyLensProvo Logo" class="logo-img" />
+        <h1 class="logo-text">SkyLensProvo</h1>
+      </div>
       <nav>
         <button class="menu-toggle" id="menu-toggle">&#9776;</button>
         <ul class="nav-links" id="nav-links">
@@ -19,28 +22,42 @@
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
-        </nav>
       </nav>
     </div>
-  </header>
+  </header> </header>
 
   <main>
-    <h2>About Me!</h2>
-    <p>We capture breathtaking drone footage for real estate, events, and landscapes across Provo and beyond.</p>
+    <!-- Hero Section -->
+    <section class="about-hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h2>About Me</h2>
+          <p>Hi, I’m <strong>Heath</strong>, the pilot and creative backbone behind SkyLensProvo. I’ve dreamed of flying since I was in the crib and now I get to combine that childhood dream with the art of storytelling.</p>
+          <p>Based in Provo, Utah, I'm here to help you capture your moment from above.</p>
+        </div>
+        <div class="hero-photo">
+          <img src="images/Heath.jpg" alt="Portrait of Heath" class="profile-img" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipment & Expertise -->
+    <section class="specs-section">
+      <h3>📷 Equipment & Expertise</h3>
+      <ul class="specs-list">
+        <li><strong>FAA Part 107 Certified Pilot</strong> – Professionally trained and fully compliant with all drone regulations.</li>
+        <li><strong>Nikon D3500 DSLR</strong> – 24 MP APS‑C sensor, ISO 100–25 600, 5 fps, Full HD 1080/60p video </li>
+        <li><strong>DJI Avata FPV Drone</strong> – 48 MP 1/1.7″ sensor, f/2.8 lens, ultra-wide 155° FOV, captures 4K/60fps and 2.7K/120fps video, max 18 min flight time </li>
+      </ul>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+      <h3>Our Mission</h3>
+      <p>At SkyLensProvo, my mission is to elevate ordinary experiences into your own personal cinematic journeys. Every shoot is driven by creativity, safety, and a deep love of flight. Whether you’re a realtor, engaged couple, business owner, or adventure seeker, I aim to bring a fresh perspective—literally and figuratively—in every frame.</p>
+    </section>
   </main>
 
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 SkyLensProvo. All rights reserved.</p>
-      <p id="last-updated">Last updated: ...</p>
-      <div class="socials">
-        <a href="https://facebook.com" target="_blank">Facebook</a> |
-        <a href="https://instagram.com" target="_blank">Instagram</a> |
-        <a href="https://youtube.com" target="_blank">YouTube</a>
-      </div>
-    </div>
-  </footer>
-
-  <script src="scripts/script.js"></script>
+  <footer> … </footer>
 </body>
 </html>

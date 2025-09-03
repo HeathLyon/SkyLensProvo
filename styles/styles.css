@@ -90,33 +90,26 @@ body {
   .footer-content .socials a:hover {
     color: #ffffff;
   }
-  .hero {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 1.5rem;
-  background-color: var(--background-color);
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
-
-.hero-img {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  flex: 1 1 400px;
+.hero-video {
+  position: relative;
+  top: 0; left: 0;
+  width: 85%;
+  height: 75%;
+  object-fit: cover;
+  z-index: -1;
 }
-
 .hero-text {
-  flex: 1 1 400px;
-  text-align: left;
-  color: var(--text-color);
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 30px;
 }
-
 .hero-text h2 {
   font-size: 2.5rem;
   color: var(--primary-color);

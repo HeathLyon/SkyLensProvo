@@ -21,7 +21,7 @@ html_content = f"""
 </html>
 """
 
-with open("index.html", "w") as f:
+with open("cookieweb.html", "w") as f:
     f.write(html_content)
 
 print("Website updated! Now commit and push to GitHub.")

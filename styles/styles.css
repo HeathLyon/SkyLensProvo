@@ -1,9 +1,12 @@
+
+
 :root {
-  --primary-color: #1a1f2b;
-  --accent-color: #FF6B35;
-  --accent-color-light: #FFD166;
+  --primary-color: #160F29;
+  --accent-color: #246A73;
+  --accent-color-light:#368F8B;
   --text-color: #333333;
-  --background-color: #F9FAFC;
+  --background-color: #F3DFC1;
+  --background-color2: #DDBEA8;
 }
 
 /* General Layout */
@@ -19,7 +22,7 @@ body {
   }  
   /* Header and Navigation */
   header {
-    background: linear-gradient(135deg, #8B0000, #FFD700);
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color-light));
 
     color: var(--background-color);
     padding: 1rem 0;

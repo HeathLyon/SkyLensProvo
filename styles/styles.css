@@ -176,8 +176,8 @@ footer {
 }
 .slideshow-container {
   position: relative;
-  width: 100%;
-  max-width: 900px;
+  width: 75%;
+  max-width: 750px;
   margin: 20px auto;
   overflow: hidden;
   border-radius: 10px;

@@ -23,3 +23,28 @@ document.addEventListener("DOMContentLoaded", function () {
     daysLeftEl.textContent = daysLeft;
   }
 });
+let slideIndex = 0;
+const showSlides = () => {
+  const slides = document.getElementsByClassName("slide");
+  for (let s of slides) s.style.display = "none";
+
+  slideIndex++;
+  if (slideIndex > slides.length) slideIndex = 1;
+
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 5000); // Change every 5 seconds
+};
+
+showSlides();
+
+// Manual controls
+document.querySelector(".prev").onclick = () => {
+  slideIndex -= 2;
+  if (slideIndex < 0) slideIndex = 0;
+  showSlides();
+};
+
+document.querySelector(".next").onclick = () => {
+  showSlides();
+};
+

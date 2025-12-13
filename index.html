@@ -6,17 +6,17 @@
   <title>SkyLensProvo</title>
   <link rel="stylesheet" href="styles/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-D3E7GTFFSR');
+    function gtag(){ dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-D3E7GTFFSR");
   </script>
-
 </head>
+
 <body>
   <header>
     <div class="nav-container">
@@ -24,6 +24,7 @@
         <img src="images/Logo.png" alt="SkyLensProvo Logo" class="logo-img" />
         <h1 class="logo-text">SkyLensProvo</h1>
       </div>
+
       <nav>
         <button class="menu-toggle" id="menu-toggle">&#9776;</button>
         <ul class="nav-links" id="nav-links">
@@ -32,7 +33,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
-    </ul>
+        </ul>
       </nav>
     </div>
   </header>
@@ -40,13 +41,32 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
+
       <div class="hero-text">
-        <h2>Welcome to SkyLensProvo</h2>
+        <h2>SkyLensProvo</h2>
         <p class="tagline"></p>
-          <video autoplay muted loop playsinline class="hero-video">
-          <source src="videos/vid.MOV" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+
+          <div class="slide fade">
+            <img src="images/Screenshot 2025-07-09 115459.png" class="slide-img" alt="Aerial Photo 1">
+          </div>
+
+          <div class="slide fade">
+            <img src="images/Screenshot 2025-07-09 115634.png" class="slide-img" alt="Aerial Photo 2">
+          </div>
+
+          <div class="slide fade">
+            <img src="images/Screenshot 2025-07-09 115750.png" class="slide-img" alt="Aerial Photo 3">
+          </div>
+
+          <!-- Optional: slideshow controls -->
+          <a class="prev">&#10094;</a>
+          <a class="next">&#10095;</a>
+
+        </div>
+
         <a href="portfolio.html" class="cta-button">View Our Work</a>
       </div>
     </section>
@@ -54,7 +74,7 @@
 
   <footer>
     <div class="footer-content">
-      <p>&copy; 2025 SkyLensProvo . All rights reserved.</p>
+      <p>&copy; 2025 SkyLensProvo. All rights reserved.</p>
       <p id="last-updated">Last updated: ...</p>
       <div class="socials">
         <a href="https://facebook.com" target="_blank">Facebook</a> |

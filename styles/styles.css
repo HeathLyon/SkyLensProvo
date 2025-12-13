@@ -1,111 +1,154 @@
-
-
-:root {
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
+:root { 
   --primary-color: #160F29;
   --accent-color: #246A73;
-  --accent-color-light:#368F8B;
+  --accent-color-light: #368F8B;
   --text-color: #333333;
   --background-color: #F3DFC1;
   --background-color2: #DDBEA8;
 }
 
-/* General Layout */
+/* =========================================
+   GLOBAL LAYOUT & TYPOGRAPHY
+========================================= */
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: var(--background-color);
-    color: var(--primary-color);
-  }
-  h1, h2, .logo {
-    font-family: 'Open Sans', sans-serif;
-  }  
-  /* Header and Navigation */
-  header {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color-light));
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  color: var(--primary-color);
+}
 
-    color: var(--background-color);
-    padding: 1rem 0;
-  }
-  .nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .logo-img {
-    height: .5rem;
-    width: .5rem;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    background-color: #fff;
-  }
-  nav {
-    width: 100%;
-  }
-  .menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    color: var(--background-color);
-    cursor: pointer;
-    margin-bottom: 0.5rem;
-  }
-  /* Nav Links Styling */
-  .nav-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-  }
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  .nav-links a:hover {
-    background-color: var(--accent-color);
-  }
-  /* Main and Footer */
-  main {
-    padding: 2rem 1rem;
-    text-align: center;
-  }
-  footer {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  .footer-content .socials a {
-    color: var(--accent-color);
-    text-decoration: none;
-    margin: 0 0.3rem;
-    transition: color 0.3s;
-  }
-  .footer-content .socials a:hover {
-    color: #ffffff;
-  }
+h1, h2, .logo {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
+header {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--accent-color-light)
+  );
+  color: var(--background-color);
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-color: #fff;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+nav {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--background-color);
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+/* Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: var(--accent-color);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+main {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+footer {
+  background-color: var(--accent-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.footer-content .socials a {
+  color: var(--background-color);
+  text-decoration: none;
+  margin: 0 0.3rem;
+  transition: color 0.3s;
+}
+
+.footer-content .socials a:hover {
+  color: white;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
 .hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
+
 .hero-video {
   position: relative;
-  top: 0; left: 0;
   width: 85%;
   height: 75%;
   object-fit: cover;
   z-index: -1;
 }
+
 .hero-text {
   position: relative;
   z-index: 1;
@@ -113,6 +156,7 @@ body {
   color: white;
   padding: 30px;
 }
+
 .hero-text h2 {
   font-size: 2.5rem;
   color: var(--primary-color);
@@ -130,7 +174,55 @@ body {
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
 
+.slide-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.slide {
+  display: none;
+}
+
+.fade {
+  animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Prev/Next Buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 16px;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  user-select: none;
+  transform: translateY(-50%);
+}
+
+.prev { left: 0; }
+.next { right: 0; }
+
+.prev:hover, .next:hover {
+  color: #ddd;
+}
+
+/* CTA Button */
 .cta-button {
   background-color: var(--accent-color);
   color: white;
@@ -144,7 +236,11 @@ body {
   background-color: var(--accent-color-light);
   color: var(--primary-color);
 }
-  .about-hero {
+
+/* =========================================
+   ABOUT PAGE HERO
+========================================= */
+.about-hero {
   padding: 3rem 1rem;
   background-color: var(--background-color);
 }
@@ -160,24 +256,6 @@ body {
   flex-wrap: wrap;
 }
 
-.hero-text {
-  flex: 1;
-  min-width: 300px;
-}
-
-.hero-text h2 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.hero-text p {
-  font-size: 1.05rem;
-  color: var(--text-color);
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
 .hero-photo {
   flex: 1;
   min-width: 250px;
@@ -188,11 +266,14 @@ body {
 .profile-img {
   width: 100%;
   max-width: 350px;
-  height: auto;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   object-fit: cover;
 }
+
+/* =========================================
+   CONTACT PAGE
+========================================= */
 .contact-main {
   padding: 3rem 1.5rem;
   text-align: center;
@@ -208,20 +289,6 @@ body {
   margin: 2rem 0;
 }
 
-.cta-button {
-  background-color: var(--accent-color);
-  color: white;
-  padding: 0.75rem 1.25rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.cta-button:hover {
-  background-color: var(--accent-color-light);
-  color: var(--primary-color);
-}
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -244,124 +311,49 @@ body {
   resize: vertical;
 }
 
-.contact-form button {
-  align-self: center;
-}
-.call-btn {
-  background-color: #28a745; /* green */
-}
+.call-btn { background-color: #28a745; }
+.text-btn { background-color: #007bff; }
 
-.text-btn {
-  background-color: #007bff; /* blue */
-}
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-    .nav-links {
-      display: none;
-      flex-direction: column;
-      background-color: #2c3e50;
-      width: 100%;
-    }
-    .nav-links.active {
-      display: flex;
-    }
-    .nav-links li {
-      padding: 1rem 0;
-      border-top: 1px solid #444;
-    }
-  }
-  .logo-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .logo-img {
-    height: 50px;
-    width: auto;
-  }
-  .logo-text {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    font-size: 1.8rem;
-  }
-/* Portfolio Grid */
+/* =========================================
+   PORTFOLIO GRID
+========================================= */
 .portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto adjusts grid items */
-    gap: 1rem;
-    padding: 2rem;
-  }
-  .portfolio-item {
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 6px #FF4E4E(0, 0, 0, 0.1);
-  }
-  .portfolio-item:hover {
-    transform: scale(1.03);
-  }
-  .portfolio-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .portfolio-item p {
-    padding: 0.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-  /* For Mobile - One column layout */
-  .promo-card {
-  background: linear-gradient(135deg, #ffd700, #ff4e4e);
-  color: #2c3e50;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   padding: 2rem;
+}
+
+.portfolio-item {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  overflow: hidden;
   text-align: center;
-  margin: 2rem auto;
-  border-radius: 15px;
-  max-width: 600px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 20rem;
+  height: 20rem;
+  cursor: pointer;
 }
 
-.promo-card h2 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
+.portfolio-item:hover,
+.portfolio-item:active {
+  transform: scale(1.03);
 }
 
-.promo-card p {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.promo-card .cta-button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #2c3e50;
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-}
-
-.promo-card .cta-button:hover {
-  background-color: #000;
-}
+/* =========================================
+   SERVICES SECTION
+========================================= */
 .services-section {
   padding: 3rem 1rem;
   background-color: #f8f9fa;
   text-align: center;
-}
-
-.services-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--primary-color);
 }
 
 .services-grid {
@@ -387,36 +379,36 @@ body {
 .service-card img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
   border-radius: 10px;
+  object-fit: cover;
   margin-bottom: 1rem;
 }
 
-.service-card h3 {
-  font-size: 1.5rem;
-  color: var(--text-color);
-  margin-bottom: 0.75rem;
+/* =========================================
+   PROMO CARD
+========================================= */
+.promo-card {
+  background: linear-gradient(135deg, #ffd700, #ff4e4e);
+  color: #2c3e50;
+  padding: 2rem;
+  text-align: center;
+  margin: 2rem auto;
+  border-radius: 15px;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
 
-.service-card p {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
-}
-.specs-section {
+/* =========================================
+   SPECS & MISSION
+========================================= */
+.specs-section,
+.mission {
   background: #fff;
   padding: 2rem 1rem;
   margin: 2rem auto;
   max-width: 800px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.specs-section h3 {
-  font-size: 1.8rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
 .specs-list {
@@ -426,54 +418,47 @@ body {
 
 .specs-list li {
   margin: 0.75rem 0;
-  font-size: 1rem;
-  line-height: 1.6;
 }
-.mission h3 {
-  font-size: 1.8rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-  text-align: center;
-}
-.mission {
-  background: #fff;
-  padding: 2rem 1rem;
-  margin: 2rem auto;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-  @media (max-width: 768px) {
-    .portfolio-grid {
-      grid-template-columns: 1fr; /* 1 column for small screens */
-      gap: 1rem;
-    }
-  }
-  /* For Tablet / Desktop - 2 or 3 columns */
-  @media (min-width: 769px) and (max-width: 1200px) {
-    .portfolio-grid {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens (tablets) */
-    }
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
   }
 
-  @media (min-width: 1201px) {
-    .portfolio-grid {
-      grid-template-columns: repeat(3, 1fr); /* 3 columns for large screens (desktops) */
-    }
-  }
-  .portfolio-item {
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 2px 6px #FF4E4E(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    width: 20rem;
-    height: 20rem;
-    object-fit: cover;
-    cursor: pointer; /* Optional: shows pointer when touching */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #2c3e50;
+    width: 100%;
   }
 
-  .portfolio-item:active {
-    transform: scale(1.03); /* Emulate hover on tap */
+  .nav-links.active {
+    display: flex;
   }
+
+  .nav-links li {
+    padding: 1rem 0;
+    border-top: 1px solid #444;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1201px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

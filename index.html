@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SkyLensProvo</title>
+
   <link rel="stylesheet" href="styles/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
 
   <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_MEASUREMENT_ID"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3E7GTFFSR"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){ dataLayer.push(arguments); }
@@ -18,10 +19,14 @@
 </head>
 
 <body>
+  <div id="cursor-drone">
+  <img src="images/Drone.svg" alt="" class="DroneSVG"> 
+  </div>
+
   <header>
     <div class="nav-container">
       <div class="logo-container">
-        <img src="images/Logo.png" alt="SkyLensProvo Logo" class="logo-img" />
+        <img src="images/Logo.png" alt="SkyLensProvo Logo" class="logo-img"/>
         <h1 class="logo-text">SkyLensProvo</h1>
       </div>
 
@@ -41,33 +46,50 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-
       <div class="hero-text">
-        <h2>SkyLensProvo</h2>
-        <p class="tagline"></p>
+
+        <!-- Value Proposition -->
+        <h2>Professional Aerial Drone Services</h2>
+        <p class="tagline">
+          Cinematic drone videography and photography for real estate,
+          businesses, and events in Utah County.
+        </p>
 
         <!-- Slideshow -->
         <div class="slideshow-container">
-
           <div class="slide fade">
             <img src="images/Screenshot 2025-07-09 115459.png" class="slide-img" alt="Aerial Photo 1">
           </div>
-
           <div class="slide fade">
             <img src="images/Screenshot 2025-07-09 115634.png" class="slide-img" alt="Aerial Photo 2">
           </div>
-
           <div class="slide fade">
             <img src="images/Screenshot 2025-07-09 115750.png" class="slide-img" alt="Aerial Photo 3">
           </div>
 
-          <!-- Optional: slideshow controls -->
           <a class="prev">&#10094;</a>
           <a class="next">&#10095;</a>
-
         </div>
 
-        <a href="portfolio.html" class="cta-button">View Our Work</a>
+        <!-- Primary CTA -->
+        <div class="cta-group">
+          <a href="contact.html" class="cta-button">Request Pricing</a>
+          <a href="services.html" class="cta-button secondary">Learn More</a>
+        </div>
+
+        <!-- Secondary CTA -->
+        <p class="cta-subtext">
+          Prefer to talk? <a href="contact.html">Contact me</a> for a free consultation.
+        </p>
+
+      </div>
+    </section>
+    <section class = "information">
+      <div>
+        <h3>Custom Areal photography</h3>
+          <p class="infoText">
+            Every is unique and we tailor each flight to your specific needs and our experience.
+          </p>
       </div>
     </section>
   </main>
@@ -76,6 +98,7 @@
     <div class="footer-content">
       <p>&copy; 2025 SkyLensProvo. All rights reserved.</p>
       <p id="last-updated">Last updated: ...</p>
+
       <div class="socials">
         <a href="https://facebook.com" target="_blank">Facebook</a> |
         <a href="https://www.instagram.com/skylensprovo/" target="_blank">Instagram</a> |

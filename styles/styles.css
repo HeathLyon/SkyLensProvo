@@ -355,7 +355,6 @@ footer {
     width: 100%;
     background: #2c3e50;
   }
-
   .nav-links.active {
     display: flex;
   }
@@ -379,12 +378,16 @@ footer {
 /* Cursor drone */
 #cursor-drone {
   position: fixed;
-  top: 0;
-  left: 0;
+  width: 18px;
+  height: 18px;
   pointer-events: none;
-  z-index: 9999;
   transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: opacity 0.2s ease;
+}
 
+#cursor-drone.hidden {
+  opacity: 0;
 }
 .DroneSVG {
   width: 16px;

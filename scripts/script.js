@@ -1,134 +1,121 @@
-// Menu toggle for mobile nav
-const toggleButton = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+document.addEventListener("DOMContentLoaded", () => {
 
-toggleButton.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});
+  /* ===============================
+     MOBILE MENU
+  =============================== */
+  const toggleButton = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-// Update last modified time in footer
-const lastUpdated = document.getElementById('last-updated');
-if (lastUpdated) {
-  const updated = new Date(document.lastModified);
-  lastUpdated.textContent = `Last updated: ${updated.toLocaleDateString()} ${updated.toLocaleTimeString()}`;
-}
-document.addEventListener("DOMContentLoaded", function () {
-  const today = new Date();
-  const endOfAugust = new Date(today.getFullYear(), 7, 31); // Month is 0-indexed: 7 = August
-  const timeDiff = endOfAugust - today;
-  const daysLeft = Math.max(0, Math.ceil(timeDiff / (1000 * 60 * 60 * 24)));
+  if (toggleButton && navLinks) {
+    toggleButton.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
 
+  /* ===============================
+     FOOTER LAST UPDATED
+  =============================== */
+  const lastUpdated = document.getElementById("last-updated");
+  if (lastUpdated) {
+    const updated = new Date(document.lastModified);
+    lastUpdated.textContent =
+      `Last updated: ${updated.toLocaleDateString()} ${updated.toLocaleTimeString()}`;
+  }
+
+  /* ===============================
+     COUNTDOWN (OPTIONAL)
+  =============================== */
   const daysLeftEl = document.getElementById("days-left");
   if (daysLeftEl) {
+    const today = new Date();
+    const endOfAugust = new Date(today.getFullYear(), 7, 31);
+    const daysLeft = Math.max(
+      0,
+      Math.ceil((endOfAugust - today) / (1000 * 60 * 60 * 24))
+    );
     daysLeftEl.textContent = daysLeft;
   }
-});
-let slideIndex = 0;
-const showSlides = () => {
+
+  /* ===============================
+     SLIDESHOW
+  =============================== */
+  let slideIndex = 0;
   const slides = document.getElementsByClassName("slide");
-  for (let s of slides) s.style.display = "none";
 
-  slideIndex++;
-  if (slideIndex > slides.length) slideIndex = 1;
+  function showSlides() {
+    if (!slides.length) return;
 
-  slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 10000); // Change every 5 seconds
-};
+    for (let s of slides) s.style.display = "none";
 
-showSlides();
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
 
-// Manual controls
-document.querySelector(".prev").onclick = () => {
-  slideIndex -= 2;
-  if (slideIndex < 0) slideIndex = 0;
-  showSlides();
-};
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 10000);
+  }
 
-document.querySelector(".next").onclick = () => {
-  showSlides();
-};
+  if (slides.length) {
+    showSlides();
 
-// Custom cursor for drone emoji
-// Select the drone element
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+
+    if (prev) {
+      prev.onclick = () => {
+        slideIndex -= 2;
+        if (slideIndex < 0) slideIndex = 0;
+        showSlides();
+      };
+    }
+
+    if (next) {
+      next.onclick = showSlides;
+    }
+  }
+
+ /* ===============================
+   DRONE CURSOR (Hide Over Images)
+=============================== */
+
 const drone = document.getElementById("cursor-drone");
+if (!drone) return;
 
-// Images to avoid
-const avoidanceTargets = document.querySelectorAll(".slide-img, .portfolio-item img");
-
-const DRONE_RADIUS = 14; // half of SVG size
-const AVOID_PADDING = 6; // distance from image
+const avoidanceTargets = document.querySelectorAll(
+  ".slide-img, .portfolio-item img"
+);
 
 let mouseX = 0;
 let mouseY = 0;
-let droneX = 0;
-let droneY = 0;
 
 document.addEventListener("mousemove", (e) => {
   mouseX = e.clientX;
   mouseY = e.clientY;
+
+  drone.style.left = mouseX + "px";
+  drone.style.top = mouseY + "px";
+
+  checkHover();
 });
 
-// Check collision
-function collides(x, y, rect) {
-  return (
-    x + DRONE_RADIUS > rect.left - AVOID_PADDING &&
-    x - DRONE_RADIUS < rect.right + AVOID_PADDING &&
-    y + DRONE_RADIUS > rect.top - AVOID_PADDING &&
-    y - DRONE_RADIUS < rect.bottom + AVOID_PADDING
-  );
-}
+function checkHover() {
+  let isOverImage = false;
 
-// Calculate safe position with orbit
-function getSafePosition(targetX, targetY) {
-  for (const el of avoidanceTargets) {
+  avoidanceTargets.forEach((el) => {
     const rect = el.getBoundingClientRect();
 
-    if (collides(targetX, targetY, rect)) {
-      // Find center of image
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
-
-      // Vector from center to mouse
-      let dx = targetX - centerX;
-      let dy = targetY - centerY;
-      let distance = Math.sqrt(dx * dx + dy * dy);
-
-      // If mouse is exactly at center, give default vector
-      if (distance === 0) {
-        dx = 1;
-        dy = 0;
-        distance = 1;
-      }
-
-      // Minimum distance to orbit
-      const minDist = Math.max(rect.width, rect.height) / 2 + DRONE_RADIUS + AVOID_PADDING;
-
-      // Normalize vector
-      const nx = dx / distance;
-      const ny = dy / distance;
-
-      const orbitX = centerX + nx * minDist;
-      const orbitY = centerY + ny * minDist;
-
-      return { x: orbitX, y: orbitY };
+    if (
+      mouseX >= rect.left &&
+      mouseX <= rect.right &&
+      mouseY >= rect.top &&
+      mouseY <= rect.bottom
+    ) {
+      isOverImage = true;
     }
+  });
+
+  if (isOverImage) {
+    drone.classList.add("hidden");
+  } else {
+    drone.classList.remove("hidden");
   }
-
-  return { x: targetX, y: targetY };
-}
-
-// Animate drone
-function animate() {
-  const safe = getSafePosition(mouseX, mouseY);
-
-  // Smooth follow
-  droneX += (safe.x - droneX) * 0.1;
-  droneY += (safe.y - droneY) * 0.1;
-
-  drone.style.left = droneX + "px";
-  drone.style.top = droneY + "px";
-
-  requestAnimationFrame(animate);
-}
-
-animate();
+}})
